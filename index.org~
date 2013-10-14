@@ -1,0 +1,54 @@
+ROBO_DEFUSE GAME
+Name:Aman Agarwal
+Roll no:201101170
+* Code Organization:
+* Class Decomposition:
+  I have used  class so that i could use their instances in my main function for the robots in level 1 and level 2 and also the class contains all the functions associated with the movement of robot.
+  These classes create instances for our robot when called for.
+  The class contains all the methods associated with robot movement,collecting defusing codes,defusing the bomb,display the score,etc.
+  They are as follows:
+  a.init:this is the constructor of our class which receives all the basic details about the field and robot.
+  b.printrobo:this method is basically responsible for the movement of robot.it prints the robot after every short interval of time giving us the view that robot is moving in any particular direction.
+  c.setdefuses:this method randomly generates positions for defuse codes.
+  d.checkdefuses:checks whether the robot has taken a defuse code or not.If yes,it returns the particular defuse coordinate to be removed from the defude codes list.
+  e.remdef:remove the defuse code whose coordinate was sent by checkdefuse method.
+  f.checkbomb:checks whether or not the robot has gone through the bomb.
+  g.show_progress:if a defuse code has been collected,it displays in a new window that the user has collected a defuse code and the nth defuse code.
+  h.endgame_lose:if the robot touches the bomb without collecting the required defuse codes,the bomb explodes;this method does the same.
+  i.incscore:increses the score if defuse code collecetd.
+  j.printdef:prints the defuse codes.
+  k.checkposn:checks if the robot is trying to go out of the window or whether it touches the walls in the second level.
+  l.inxpos,inypos,dexpos,deypos:increases or decreases the x and y position corresponding to whether up,down,left or right key is pressed.
+  m.setwalls:prints the walls in the second level.
+  n:end:displays in terminal about the progress of the game.
+  
+
+* Advantage
+  The use of class made it possible to instantiate/create the robot for two levels using single class and also none of the parameters can be changed/mutated in main.
+  Yes,the code is quite a simple one and can be easily used to modify the game according to our requirement by simply adding the feature in another method in our ROBO class...as i used my same class to add walls in the second level.
+   
+* Program control flow
+  Firstly,in the main function,the program asks the user for the height,width,size and other parameters specified in the question.The constructor of the robot class does all the initialisations.
+  The while statement makes sure that an escape key is not pressed.In the while function,firstly it checks whether the position of the robot is within the boundary of the window.If not,game is over.
+  Next it prints the current position of the robot(everytime it prints the robot,it gives us the feeling that the robot is moving).Now,for every one step ahead that the robo takes,we need to check if it has taken a defuse code or not.If yes,the score gets increased by 1 and that defuse code is removed.
+  Next,it checks if the robot has tried to defuse the bomb without required no. of defude codes.If it has the required no of defuse codes,you proceed to level 2..,if not ,game ends.
+  Now,as the user continuously presses up,down,left,right keys to move the robot,we also check whether the player wants to pause the game by using the pause('p') button.if it does,the code runs an infinite loop for getch until again 'p' is pressed.hence,game is paused.
+  If it is not the 'p' button which is pressed,it might be an up,down,left,right arrow key or nothing is pressed in case user wants the robot to move in the same direction.So,it checks for the same and hence updates the x and y position of the robot accordingly.
+  
+  
+
+* Logic
+  The logic of the game is very simple.We generate random positions for the defuse codes(making sure that they never overlap with the walls or the bomb)and then print them before the while loop for checking escape character.
+  Now,as in the snake game code,print the robot at every iteration of the while statement after changing the x and y positions corresponding to waht the player presses.
+  So,this seems to the viewer as if the robot is responding to our key presses.Also,in every iteration of while loop,we print the position of the defude codes,so that the ones taken by the robot are beign removed at next printdefuses.
+  Similarly,it goes with the bomb.Hence,it gives us a look of a robo_defuse game.
+ 
+* Extra features
+  The extra features includes the following:
+  a.i have used colors for bombs,robot and defuse codes using the curses.start_color() and then curses.color_pair(i).
+  b.i have added an extra level which contains walls.if the robot touches the wall,the game ends with 1 level cleared.
+  c.i have also asked for game mode..i.e.easy,medium.insane in which i have just increased the timeout.
+
+
+
+[[file:./robo_scr1.png][file:a.png]]

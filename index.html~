@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>ROBO<sub>DEFUSE</sub> GAME</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-03-27 21:34:59 IST"/>
+<meta name="author" content="Aman"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">ROBO<sub>DEFUSE</sub> GAME</h1>
+
+<p>Name:Aman Agarwal
+Roll no:201101170
+</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Code Organization: </a></li>
+<li><a href="#sec-2">2 Class Decomposition: </a></li>
+<li><a href="#sec-3">3 Advantage </a></li>
+<li><a href="#sec-4">4 Program control flow </a></li>
+<li><a href="#sec-5">5 Logic </a></li>
+<li><a href="#sec-6">6 Extra features </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Code Organization: </h2>
+<div class="outline-text-2" id="text-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Class Decomposition: </h2>
+<div class="outline-text-2" id="text-2">
+
+<p>I have used  class so that i could use their instances in my main function for the robots in level 1 and level 2 and also the class contains all the functions associated with the movement of robot.
+These classes create instances for our robot when called for.
+The class contains all the methods associated with robot movement,collecting defusing codes,defusing the bomb,display the score,etc.
+They are as follows:
+a.init:this is the constructor of our class which receives all the basic details about the field and robot.
+b.printrobo:this method is basically responsible for the movement of robot.it prints the robot after every short interval of time giving us the view that robot is moving in any particular direction.
+c.setdefuses:this method randomly generates positions for defuse codes.
+d.checkdefuses:checks whether the robot has taken a defuse code or not.If yes,it returns the particular defuse coordinate to be removed from the defude codes list.
+e.remdef:remove the defuse code whose coordinate was sent by checkdefuse method.
+f.checkbomb:checks whether or not the robot has gone through the bomb.
+g.show<sub>progress</sub>:if a defuse code has been collected,it displays in a new window that the user has collected a defuse code and the nth defuse code.
+h.endgame<sub>lose</sub>:if the robot touches the bomb without collecting the required defuse codes,the bomb explodes;this method does the same.
+i.incscore:increses the score if defuse code collecetd.
+j.printdef:prints the defuse codes.
+k.checkposn:checks if the robot is trying to go out of the window or whether it touches the walls in the second level.
+l.inxpos,inypos,dexpos,deypos:increases or decreases the x and y position corresponding to whether up,down,left or right key is pressed.
+m.setwalls:prints the walls in the second level.
+n:end:displays in terminal about the progress of the game.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Advantage </h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The use of class made it possible to instantiate/create the robot for two levels using single class and also none of the parameters can be changed/mutated in main.
+Yes,the code is quite a simple one and can be easily used to modify the game according to our requirement by simply adding the feature in another method in our ROBO class&hellip;as i used my same class to add walls in the second level.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Program control flow </h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Firstly,in the main function,the program asks the user for the height,width,size and other parameters specified in the question.The constructor of the robot class does all the initialisations.
+The while statement makes sure that an escape key is not pressed.In the while function,firstly it checks whether the position of the robot is within the boundary of the window.If not,game is over.
+Next it prints the current position of the robot(everytime it prints the robot,it gives us the feeling that the robot is moving).Now,for every one step ahead that the robo takes,we need to check if it has taken a defuse code or not.If yes,the score gets increased by 1 and that defuse code is removed.
+Next,it checks if the robot has tried to defuse the bomb without required no. of defude codes.If it has the required no of defuse codes,you proceed to level 2..,if not ,game ends.
+Now,as the user continuously presses up,down,left,right keys to move the robot,we also check whether the player wants to pause the game by using the pause('p') button.if it does,the code runs an infinite loop for getch until again 'p' is pressed.hence,game is paused.
+If it is not the 'p' button which is pressed,it might be an up,down,left,right arrow key or nothing is pressed in case user wants the robot to move in the same direction.So,it checks for the same and hence updates the x and y position of the robot accordingly.
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Logic </h2>
+<div class="outline-text-2" id="text-5">
+
+<p>The logic of the game is very simple.We generate random positions for the defuse codes(making sure that they never overlap with the walls or the bomb)and then print them before the while loop for checking escape character.
+Now,as in the snake game code,print the robot at every iteration of the while statement after changing the x and y positions corresponding to waht the player presses.
+So,this seems to the viewer as if the robot is responding to our key presses.Also,in every iteration of while loop,we print the position of the defude codes,so that the ones taken by the robot are beign removed at next printdefuses.
+Similarly,it goes with the bomb.Hence,it gives us a look of a robo<sub>defuse</sub> game.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Extra features </h2>
+<div class="outline-text-2" id="text-6">
+
+<p>The extra features includes the following:
+a.i have used colors for bombs,robot and defuse codes using the curses.start<sub>color</sub>() and then curses.color<sub>pair</sub>(i).
+b.i have added an extra level which contains walls.if the robot touches the wall,the game ends with 1 level cleared.
+c.i have also asked for game mode..i.e.easy,medium.insane in which i have just increased the timeout.
+</p>
+
+
+<p>
+<a href="./robo_scr1.png"><img src="a.png"/></a>
+</p></div>
+</div>
+<div id="postamble">
+<p class="author"> Author: Aman
+<a href="mailto:aman@aman-HP-Pavilion-g6">&lt;aman@aman-HP-Pavilion-g6&gt;</a>
+</p>
+<p class="date"> Date: 2012-03-27 21:34:59 IST</p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
